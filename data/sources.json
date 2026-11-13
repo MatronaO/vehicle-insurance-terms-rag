@@ -1,0 +1,37 @@
+[
+  {
+    "file": "if-bilforsakring-forkopsinformation-2026-05.pdf",
+    "url": "https://www.if.se/globalassets/se/dokument/privat/bilforsakring-forkopsinformation.pdf",
+    "insurer": "If",
+    "document_type": "pre_purchase_information",
+    "version_label": "May 2026"
+  },
+  {
+    "file": "if-fordonsforsakring-villkor-2026-05.pdf",
+    "url": "https://www.if.se/globalassets/se/dokument/privat/motorforsakring-villkor.pdf",
+    "insurer": "If",
+    "document_type": "insurance_terms",
+    "version_label": "May 2026"
+  },
+  {
+    "file": "if-fordonsforsakring-villkor-2025-05.pdf",
+    "url": "https://www.if.se/globalassets/se/dokument/privat/motorforsakring-villkor-old.pdf",
+    "insurer": "If",
+    "document_type": "insurance_terms",
+    "version_label": "May 2025"
+  },
+  {
+    "file": "if-bilforsakring-europeisk-forkopsinformation.pdf",
+    "url": "https://www.if.se/globalassets/se/dokument/privat/bilforsakring-europeisk-forkopsinformation.pdf",
+    "insurer": "If",
+    "document_type": "ipid",
+    "version_label": null
+  },
+  {
+    "file": "if-car-insurance-summary-english-2026-05.pdf",
+    "url": "https://www.if.se/globalassets/se/dokument/privat/car-insurance-summary-english.pdf",
+    "insurer": "If",
+    "document_type": "pre_purchase_information",
+    "version_label": "May 2026"
+  }
+]

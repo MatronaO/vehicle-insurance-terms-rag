@@ -17,36 +17,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "raw" / "if"
 MAX_BYTES = 25 * 1024 * 1024
-SOURCES = [
-    {
-        "file": "if-bilforsakring-forkopsinformation-2026-05.pdf",
-        "url": "https://www.if.se/globalassets/se/dokument/privat/bilforsakring-forkopsinformation.pdf",
-        "insurer": "If",
-        "document_type": "pre_purchase_information",
-        "version_label": "May 2026",
-    },
-    {
-        "file": "if-fordonsforsakring-villkor-2026-05.pdf",
-        "url": "https://www.if.se/globalassets/se/dokument/privat/motorforsakring-villkor.pdf",
-        "insurer": "If",
-        "document_type": "insurance_terms",
-        "version_label": "May 2026",
-    },
-    {
-        "file": "if-fordonsforsakring-villkor-2025-05.pdf",
-        "url": "https://www.if.se/globalassets/se/dokument/privat/motorforsakring-villkor-old.pdf",
-        "insurer": "If",
-        "document_type": "insurance_terms",
-        "version_label": "May 2025",
-    },
-]
+SOURCES_PATH = ROOT / "data" / "sources.json"
+
 
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     manifest = []
+    sources = json.loads(SOURCES_PATH.read_text(encoding="utf-8"))
     failures = 0
-    for source in SOURCES:
+    for source in sources:
         target = OUT / source["file"]
         try:
             request = urllib.request.Request(
@@ -88,7 +68,7 @@ def main() -> None:
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Manifest: {manifest_path.relative_to(ROOT)}")
     if failures:
-        raise SystemExit(f"{failures} of {len(SOURCES)} downloads failed")
+        raise SystemExit(f"{failures} of {len(sources)} downloads failed")
 
 
 if __name__ == "__main__":

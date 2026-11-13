@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Locally downloaded third-party insurance documents and manifest
+/data/raw/
